@@ -12,7 +12,7 @@ def mouse_vs_mouse(computer_mouse_wordset, animal_wordset, input_iterable):
     """
     for sentence in input_iterable:
         if computer_mouse_wordset.count_occurrences(sentence) >= animal_wordset.count_occurrences(sentence):
-            yield 'computer_mouse'
+            yield 'computer-mouse'
         else:
             yield 'animal'
 
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Mouse vs Mouse')
     parser.add_argument('input', help='input file')
     parser.add_argument('--animal', help='animal set', default='animal.txt')
-    parser.add_argument('--computer_mouse', help='computer mouse set', default='computer-mouse.txt')
+    parser.add_argument('--computer-mouse', help='computer mouse set', default='computer-mouse.txt')
 
     args = parser.parse_args()
 

@@ -4,7 +4,7 @@ import argparse
 def running_median(input_iterable):
     """Calculate a running median for input_iterable and return it as generator
     :param input_iterable: iterable with numbers to calculate a running median
-    :return a running_median as generator
+    :return a running_median as generator, all elements are floats
     """
     acc = []
     for number in input_iterable:
@@ -27,10 +27,14 @@ def file_reader(file_name):
             yield int(input_file.readline())  # TODO: handle if not a integer
 
 
+def custom_format(number):
+    return f'{float(number):.1f}'
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Running Median')
     parser.add_argument('input', help='input file')
 
     args = parser.parse_args()
     for median in running_median(file_reader(args.input)):
-        print(f'{median:.1f}')
+        print(custom_format(median))

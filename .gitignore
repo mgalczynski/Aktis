@@ -4,3 +4,4 @@ venv
 
 **/*.txt
 !**/requirements.txt
+!**/requirements-dev.txt
