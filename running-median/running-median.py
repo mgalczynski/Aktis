@@ -2,6 +2,10 @@ import argparse
 
 
 def running_median(input_iterable):
+    """Calculate a running median for input_iterable and return it as generator
+    :param input_iterable: iterable with numbers to calculate a running median
+    :return a running_median as generator
+    """
     acc = []
     for number in input_iterable:
         acc.append(number)
@@ -13,6 +17,10 @@ def running_median(input_iterable):
 
 
 def file_reader(file_name):
+    """Return N rows of the file, where N is in first row of the file (N is not included)
+    :param file_name: absolute or relative file name
+    :return: content of the file as integers
+    """
     with open(file_name, 'rt') as input_file:
         n = int(input_file.readline())  # TODO: handle if not a integer
         for _ in range(n):
